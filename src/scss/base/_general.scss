@@ -1,0 +1,11 @@
+@use "../abstracts/" as *;
+
+//* set up the body
+body {
+  line-height: 1.5;
+  min-height: 100vh;
+  background-color: $clr-dark;
+  color: $clr-white;
+  font-family: $ff-sans-normal;
+  font-size: $fs-400;
+}
