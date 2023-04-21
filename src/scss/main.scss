@@ -5,3 +5,11 @@
 // TODO remove before final commit
 @use "sass:color";
 @use "abstracts" as *;
+
+.root-layout {
+  height: 100%;
+  background-image: url("./home/background-home-desktop.jpg");
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: cover;
+}
