@@ -1,0 +1,34 @@
+@use "../abstracts" as *;
+#colors {
+  @include flow();
+}
+
+#typography {
+  @include flow();
+  .typography__first {
+    @include flow();
+  }
+  .typography__second {
+    @include flow(4rem);
+  }
+}
+
+#interactive-elements {
+  @include flow();
+}
+
+.test {
+  background: purple;
+  width: 100px;
+  height: 100px;
+  background-color: black;
+  @include mq(small) {
+    background-color: red;
+  }
+  @include mq(medium) {
+    background-color: green;
+  }
+  @include mq(large) {
+    background-color: blue;
+  }
+}

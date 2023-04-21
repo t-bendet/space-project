@@ -1,0 +1,15 @@
+@use "breakpoints" as *;
+@use "sass:map";
+
+@mixin mq($key) {
+  $size: map.get($breakpoints, $key);
+  @media (min-width: $size) {
+    @content;
+  }
+}
+
+@mixin flow($space: 1rem) {
+  > *:where(:not(:first-child)) {
+    margin-top: $space;
+  }
+}
