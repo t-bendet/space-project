@@ -1,5 +1,6 @@
 // Layout and screen radars
 @use "../abstracts/" as *;
+@use "sass:map";
 
 // TODO mixin or css var for gap property,remove gap?...
 
@@ -21,6 +22,29 @@
   padding-inline: 2em;
   margin-inline: auto;
   max-width: 80rem;
+}
+
+.grid-container {
+  display: grid;
+  outline: 5px solid limegreen;
+  span {
+    display: block;
+  }
+  @include mq(small) {
+    grid-template-columns: minmax(2rem, 1fr) repeat(2, minmax(0, 30rem)) minmax(
+        2rem,
+        1fr
+      );
+    column-gap: var(--container-gap, 2rem);
+    & > *:first-child {
+      grid-column: 2;
+      outline: 1px solid red;
+    }
+    & > *:last-child {
+      grid-column: 3;
+      outline: 1px solid yellow;
+    }
+  }
 }
 
 .sr-only {
