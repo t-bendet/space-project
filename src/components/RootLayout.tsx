@@ -1,4 +1,4 @@
-// import NavBar from "./NavBar";
+import NavBar from "./NavBar";
 import { Outlet, useLocation } from "react-router-dom";
 
 function RootLayout() {
@@ -6,8 +6,8 @@ function RootLayout() {
 
   console.log(pathname);
   return (
-    <div className="root-layout">
-      {/* <NavBar isMobile={isMobile} /> */}
+    <div className="root-layout home">
+      <NavBar />
       <Outlet />
     </div>
   );
