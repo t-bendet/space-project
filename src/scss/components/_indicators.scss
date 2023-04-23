@@ -4,7 +4,7 @@
 .underline-indicators {
   & > * {
     cursor: pointer;
-    padding: 2rem 0;
+    padding: var(--underline-gap, 1rem) 0;
     border: 0;
 
     border-bottom: 0.2rem solid color.adjust($clr-white, $alpha: -1);
@@ -22,7 +22,7 @@
 }
 
 .tab-list {
-  gap: 2rem;
+  --gap: 2rem;
 }
 
 .indicators {
