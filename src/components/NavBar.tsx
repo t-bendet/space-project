@@ -4,7 +4,7 @@ const NavBar = (): JSX.Element => {
       <div>
         <img src="../logo.svg" alt="space tourism logo" className="logo" />
       </div>
-      <nav>
+      {/* <nav>
         <ul className="primary-navigation underline-indicators flex">
           <li className="active">
             <a
@@ -39,7 +39,7 @@ const NavBar = (): JSX.Element => {
             </a>
           </li>
         </ul>
-      </nav>
+      </nav> */}
     </header>
   );
 };

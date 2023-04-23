@@ -18,6 +18,10 @@
   gap: var(--gap, 1rem);
 }
 
+.d-block {
+  display: block;
+}
+
 .container {
   padding-inline: 2em;
   margin-inline: auto;
@@ -27,14 +31,7 @@
 .grid-container {
   display: grid;
   outline: 5px solid limegreen;
-  span {
-    display: block;
-  }
-  @include mq(small) {
-    // $fs-500: 9rem;
-    // h1 {
-    //   font-size: $fs-500;
-    // }
+  @include mq(large) {
     grid-template-columns: minmax(2rem, 1fr) repeat(2, minmax(0, 30rem)) minmax(
         2rem,
         1fr
