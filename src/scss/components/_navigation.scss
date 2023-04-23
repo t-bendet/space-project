@@ -1,6 +1,7 @@
 // TODO change flex to be responsive(screen width can't shrink)
 .primary-navigation {
-  gap: 8rem;
+  --gap: 8rem;
+  --underline-gap: 2rem;
   list-style: none;
   padding: 0;
   margin: 0;

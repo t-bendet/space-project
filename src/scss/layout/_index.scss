@@ -6,7 +6,7 @@
 
 .flex {
   display: flex;
-  gap: 1rem;
+  gap: var(--gap, 1rem);
   .item {
     flex-grow: 1;
     @include flow();
@@ -15,7 +15,7 @@
 
 .grid {
   display: grid;
-  gap: 1rem;
+  gap: var(--gap, 1rem);
 }
 
 .container {
@@ -31,6 +31,10 @@
     display: block;
   }
   @include mq(small) {
+    // $fs-500: 9rem;
+    // h1 {
+    //   font-size: $fs-500;
+    // }
     grid-template-columns: minmax(2rem, 1fr) repeat(2, minmax(0, 30rem)) minmax(
         2rem,
         1fr
