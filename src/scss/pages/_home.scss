@@ -1,0 +1,12 @@
+@use "../abstracts/" as *;
+
+.home {
+  background-image: url("./home/background-home-mobile.jpg");
+  @include mq(medium) {
+    background-image: url("./home/background-home-tablet.jpg");
+    background-position: center center;
+  }
+  @include mq(large) {
+    background-image: url("./home/background-home-desktop.jpg");
+  }
+}
