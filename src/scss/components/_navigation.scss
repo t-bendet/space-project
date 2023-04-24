@@ -1,15 +1,54 @@
-// TODO change flex to be responsive(screen width can't shrink)
+@use "../abstracts/" as *;
+@use "sass:map";
+@use "sass:color";
 .primary-navigation {
-  --gap: 8rem;
   --underline-gap: 2rem;
   list-style: none;
   padding: 0;
   margin: 0;
   a {
     text-decoration: none;
-    & > span {
-      font-weight: 700;
-      margin-right: 0.5em;
+  }
+  a > span {
+    font-weight: 700;
+    margin-right: 0.5em;
+  }
+  @media (max-width: map.get($breakpoints,"medium")) {
+    --underline-gap: 0.5rem;
+    position: fixed;
+    z-index: 100;
+    inset: 0 0 0 30%;
+    background: color.adjust($clr-dark, $alpha: -0.95);
+    list-style: none;
+    padding: min(20rem, 15vh) 2rem;
+    margin: 0;
+    flex-direction: column;
+    transform: translateX(100%);
+
+    &.underline-indicators > .active {
+      border: 0;
     }
+    // if the browser supports this property,then..
+    @supports (backdrop-filter: blur(2.5rem)) {
+      background: color.adjust($clr-white, $alpha: -0.96);
+      backdrop-filter: blur(1.5rem);
+    }
+  }
+}
+
+.mobile-nav-toggle {
+  display: none;
+  @media (max-width: map.get($breakpoints,"medium")) {
+    display: block;
+    position: absolute;
+    z-index: 200;
+    right: 1rem;
+    top: 2rem;
+    background: transparent;
+    border: 0;
+    background-image: url("../icon-hamburger.svg");
+    background-repeat: no-repeat;
+    width: 1.5rem;
+    aspect-ratio: 1;
   }
 }

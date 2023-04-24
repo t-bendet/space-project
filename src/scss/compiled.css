@@ -100,6 +100,7 @@ select {
   min-width: min-content;
   background-size: cover;
   background-position: bottom center;
+  overflow-x: hidden;
 }
 
 .bg-dark {
@@ -356,7 +357,6 @@ select {
 }
 
 .primary-navigation {
-  --gap: 8rem;
   --underline-gap: 2rem;
   list-style: none;
   padding: 0;
@@ -368,6 +368,48 @@ select {
 .primary-navigation a > span {
   font-weight: 700;
   margin-right: 0.5em;
+}
+@media (max-width: 35rem) {
+  .primary-navigation {
+    --underline-gap: 0.5rem;
+    position: fixed;
+    z-index: 100;
+    inset: 0 0 0 30%;
+    background: rgba(12, 14, 24, 0.05);
+    list-style: none;
+    padding: min(20rem, 15vh) 2rem;
+    margin: 0;
+    flex-direction: column;
+    transform: translateX(100%);
+  }
+  .primary-navigation.underline-indicators > .active {
+    border: 0;
+  }
+  @supports (backdrop-filter: blur(2.5rem)) {
+    .primary-navigation {
+      background: rgba(255, 255, 255, 0.04);
+      backdrop-filter: blur(1.5rem);
+    }
+  }
+}
+
+.mobile-nav-toggle {
+  display: none;
+}
+@media (max-width: 35rem) {
+  .mobile-nav-toggle {
+    display: block;
+    position: absolute;
+    z-index: 200;
+    right: 1rem;
+    top: 2rem;
+    background: transparent;
+    border: 0;
+    background-image: url("../icon-hamburger.svg");
+    background-repeat: no-repeat;
+    width: 1.5rem;
+    aspect-ratio: 1;
+  }
 }
 
 #colors > *:where(:not(:first-child)) {

@@ -4,8 +4,16 @@ const NavBar = (): JSX.Element => {
       <div>
         <img src="../logo.svg" alt="space tourism logo" className="logo" />
       </div>
-      {/* <nav>
-        <ul className="primary-navigation underline-indicators flex">
+      <button className="mobile-nav-toggle" aria-controls="primary-navigation">
+        <span className="sr-only" aria-expanded={false}>
+          Menu
+        </span>
+      </button>
+      <nav>
+        <ul
+          id="primary-navigation"
+          className="primary-navigation underline-indicators flex"
+        >
           <li className="active">
             <a
               className="ff-sans-cond uppercase text-white letter-spacing-2"
@@ -39,7 +47,7 @@ const NavBar = (): JSX.Element => {
             </a>
           </li>
         </ul>
-      </nav> */}
+      </nav>
     </header>
   );
 };
