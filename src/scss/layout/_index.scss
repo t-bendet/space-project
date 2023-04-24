@@ -2,8 +2,6 @@
 @use "../abstracts/" as *;
 @use "sass:map";
 
-// TODO mixin or css var for gap property,remove gap?...
-
 .flex {
   display: flex;
   gap: var(--gap, 1rem);
@@ -29,21 +27,33 @@
 }
 
 .grid-container {
+  * {
+    max-width: 50ch;
+  }
+
   display: grid;
-  outline: 5px solid limegreen;
+  text-align: center;
+  place-items: center;
+  padding-inline: 1rem;
   @include mq(large) {
-    grid-template-columns: minmax(2rem, 1fr) repeat(2, minmax(0, 30rem)) minmax(
-        2rem,
+    text-align: left;
+    // ? make margins smaller?
+    grid-template-columns: minmax(1rem, 1fr) repeat(2, minmax(0, 30rem)) minmax(
+        1rem,
         1fr
       );
     column-gap: var(--container-gap, 2rem);
     & > *:first-child {
       grid-column: 2;
-      outline: 1px solid red;
     }
     & > *:last-child {
       grid-column: 3;
-      outline: 1px solid yellow;
+      // TODO add this
+      // justify-self: end;
+    }
+    &--home {
+      padding-bottom: max(6rem, 20vh);
+      align-items: end;
     }
   }
 }
