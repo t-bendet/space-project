@@ -36,11 +36,6 @@
   line-height: 1.5;
   grid-template-rows: min-content 1fr;
   min-width: min-content;
-}
-
-.home {
-  background-image: url("./home/background-home-desktop.jpg");
-  background-position: center;
-  background-repeat: no-repeat;
   background-size: cover;
+  background-position: bottom center;
 }

@@ -1,6 +1,6 @@
 const Home = (): JSX.Element => {
   return (
-    <div className="grid-container">
+    <div className="grid-container grid-container--home">
       <div>
         <h1 className="text-accent fs-500 ff-sans-cond uppercase letter-spacing-1">
           So, you want to travel to
@@ -17,7 +17,7 @@ const Home = (): JSX.Element => {
       <div>
         <a
           href="#"
-          className="large-button uppercase ff-serif fs-600 text-dark bg-white"
+          className="large-button uppercase ff-serif text-dark bg-white"
         >
           Explore
         </a>
