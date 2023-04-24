@@ -1,11 +1,21 @@
+import { useState } from "react";
 const NavBar = (): JSX.Element => {
+  const [isNavOpen, setIsNavOpen] = useState<boolean>(false);
+  const navToggleHandler = () => {
+    setIsNavOpen((prev) => !prev);
+  };
   return (
     <header className="primary-header flex">
       <div>
         <img src="../logo.svg" alt="space tourism logo" className="logo" />
       </div>
-      <button className="mobile-nav-toggle" aria-controls="primary-navigation">
-        <span className="sr-only" aria-expanded={false}>
+      <button
+        onClick={navToggleHandler}
+        className="mobile-nav-toggle"
+        aria-controls="primary-navigation"
+        data-visible={isNavOpen}
+      >
+        <span className="sr-only" aria-expanded={isNavOpen}>
           Menu
         </span>
       </button>
@@ -13,6 +23,8 @@ const NavBar = (): JSX.Element => {
         <ul
           id="primary-navigation"
           className="primary-navigation underline-indicators flex"
+          data-visible={isNavOpen}
+          onClick={navToggleHandler}
         >
           <li className="active">
             <a
