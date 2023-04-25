@@ -31,7 +31,7 @@ const NavBar = (): JSX.Element => {
               className="ff-sans-cond uppercase text-white letter-spacing-2"
               href="index.html"
             >
-              <span>00</span>Home
+              <span aria-hidden="true">00</span>Home
             </a>
           </li>
           <li>
@@ -39,7 +39,7 @@ const NavBar = (): JSX.Element => {
               className="ff-sans-cond uppercase text-white letter-spacing-2"
               href="destination.html"
             >
-              <span>01</span>Destination
+              <span aria-hidden="true">01</span>Destination
             </a>
           </li>
           <li>
@@ -47,7 +47,7 @@ const NavBar = (): JSX.Element => {
               className="ff-sans-cond uppercase text-white letter-spacing-2"
               href="crew.html"
             >
-              <span>02</span>Crew
+              <span aria-hidden="true">02</span>Crew
             </a>
           </li>
           <li>
@@ -55,7 +55,7 @@ const NavBar = (): JSX.Element => {
               className="ff-sans-cond uppercase text-white letter-spacing-2"
               href="technology.html"
             >
-              <span>03</span>Technology
+              <span aria-hidden="true">03</span>Technology
             </a>
           </li>
         </ul>
