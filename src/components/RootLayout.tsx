@@ -3,10 +3,14 @@ import { Outlet, useLocation } from "react-router-dom";
 
 function RootLayout() {
   const { pathname } = useLocation();
-
-  // console.log(pathname);
+  const appClasses = () => {
+    if (location.pathname === "/") {
+      return "root-layout home";
+    }
+    return `root-layout ${pathname.replace("/", "")}`;
+  };
   return (
-    <div className="root-layout home">
+    <div className={appClasses()}>
       <a className="skip-to-content" href="#main">
         Skip to content
       </a>

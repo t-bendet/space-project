@@ -14,7 +14,8 @@
       border-color: color.adjust($clr-white, $alpha: -0.5);
     }
   }
-  .active,
+
+  li:has(.active),
   [aria-selected="true"] {
     border-color: color.adjust($clr-white, $alpha: 1);
     color: color.adjust($clr-white, $alpha: 1);

@@ -1,8 +1,15 @@
 import { useState } from "react";
+import { NavLink } from "react-router-dom";
+
 const NavBar = (): JSX.Element => {
   const [isNavOpen, setIsNavOpen] = useState<boolean>(false);
   const navToggleHandler = () => {
     setIsNavOpen((prev) => !prev);
+  };
+  const linkClasses = (isActive: boolean) => {
+    return isActive
+      ? "ff-sans-cond uppercase text-white letter-spacing-2 active"
+      : "ff-sans-cond uppercase text-white letter-spacing-2";
   };
   return (
     <header className="primary-header flex">
@@ -26,37 +33,37 @@ const NavBar = (): JSX.Element => {
           data-visible={isNavOpen}
           onClick={navToggleHandler}
         >
-          <li className="active">
-            <a
-              className="ff-sans-cond uppercase text-white letter-spacing-2"
-              href="index.html"
+          <li>
+            <NavLink
+              className={({ isActive }) => linkClasses(isActive)}
+              to=".."
             >
               <span aria-hidden="true">00</span>Home
-            </a>
+            </NavLink>
           </li>
           <li>
-            <a
-              className="ff-sans-cond uppercase text-white letter-spacing-2"
-              href="destination.html"
+            <NavLink
+              className={({ isActive }) => linkClasses(isActive)}
+              to="destinations"
             >
               <span aria-hidden="true">01</span>Destination
-            </a>
+            </NavLink>
           </li>
           <li>
-            <a
-              className="ff-sans-cond uppercase text-white letter-spacing-2"
-              href="crew.html"
+            <NavLink
+              className={({ isActive }) => linkClasses(isActive)}
+              to="crew"
             >
               <span aria-hidden="true">02</span>Crew
-            </a>
+            </NavLink>
           </li>
           <li>
-            <a
-              className="ff-sans-cond uppercase text-white letter-spacing-2"
-              href="technology.html"
+            <NavLink
+              className={({ isActive }) => linkClasses(isActive)}
+              to="technology"
             >
               <span aria-hidden="true">03</span>Technology
-            </a>
+            </NavLink>
           </li>
         </ul>
       </nav>
