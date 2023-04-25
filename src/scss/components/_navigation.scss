@@ -71,7 +71,7 @@
     &[data-visible="true"] {
       transform: translateX(0);
     }
-    &.underline-indicators > .active {
+    &.underline-indicators > li:has(.active) {
       border: 0;
     }
   }

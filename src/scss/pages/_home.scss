@@ -10,3 +10,39 @@
     background-image: url("./home/background-home-desktop.jpg");
   }
 }
+
+// TODO if any more page specific design move all other classes to respected files
+// TODO else change name of thi file
+
+.destinations {
+  background-image: url("./destination/background-destination-mobile.jpg");
+  @include mq(medium) {
+    background-image: url("./destination/background-destination-tablet.jpg");
+    background-position: center center;
+  }
+  @include mq(large) {
+    background-image: url("./destination/background-destination-desktop.jpg");
+  }
+}
+
+.crew {
+  background-image: url("./crew/background-crew-mobile.jpg");
+  @include mq(medium) {
+    background-image: url("./crew/background-crew-tablet.jpg");
+    background-position: center center;
+  }
+  @include mq(large) {
+    background-image: url("./crew/background-crew-desktop.jpg");
+  }
+}
+
+.technology {
+  background-image: url("./technology/background-technology-mobile.jpg");
+  @include mq(medium) {
+    background-image: url("./technology/background-technology-tablet.jpg");
+    background-position: center center;
+  }
+  @include mq(large) {
+    background-image: url("./technology/background-technology-desktop.jpg");
+  }
+}
