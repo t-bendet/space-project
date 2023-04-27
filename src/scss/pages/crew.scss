@@ -1,0 +1,15 @@
+@use "../abstracts/" as *;
+
+.crew {
+  background-image: url("./crew/background-crew-mobile.jpg");
+  @include mq(medium) {
+    background-image: url("./crew/background-crew-tablet.jpg");
+    background-position: center center;
+  }
+  @include mq(large) {
+    background-image: url("./crew/background-crew-desktop.jpg");
+  }
+}
+
+.grid-container--crew {
+}

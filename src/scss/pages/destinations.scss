@@ -1,0 +1,42 @@
+@use "../abstracts/" as *;
+@use "sass:color";
+
+.destinations {
+  background-image: url("./destination/background-destination-mobile.jpg");
+  @include mq(medium) {
+    background-image: url("./destination/background-destination-tablet.jpg");
+    background-position: center center;
+  }
+  @include mq(large) {
+    background-image: url("./destination/background-destination-desktop.jpg");
+  }
+}
+
+.grid-container--destination {
+  @include flow(2rem);
+  grid-template-areas:
+    "title"
+    "image"
+    "tabs"
+    "content";
+  & > .numbered-title {
+    grid-area: title;
+  }
+  & > img {
+    grid-area: image;
+    max-width: 60%;
+  }
+  & > .tab-list {
+    grid-area: tabs;
+  }
+  & > .destination-info {
+    grid-area: content;
+  }
+}
+
+.destination-meta {
+  flex-direction: column;
+  border-top: 1px solid color.adjust($clr-white, $alpha: -0.8);
+  padding-top: 2.5rem;
+  margin-top: 2.5rem;
+}
