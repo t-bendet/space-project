@@ -28,7 +28,7 @@ const Destinations = (): JSX.Element => {
       return (
         <button
           aria-selected={dest.id === destination.id}
-          className="uppercase ff-sans-cond text-accent bg-dark letter-spacing-2"
+          className="uppercase ff-sans-cond text-accent bg-transparent letter-spacing-2"
           key={dest.id}
           onClick={() => destinationChangeHandler(dest.id)}
         >
@@ -55,11 +55,11 @@ const Destinations = (): JSX.Element => {
         <div className="destination-meta flex">
           <div>
             <h3 className="text-accent fs-200 uppercase">Avg. distance</h3>
-            <p className="fs-500 ff-serif uppercase">{destination.distance}</p>
+            <p className="ff-serif uppercase">{destination.distance}</p>
           </div>
           <div>
             <h3 className="text-accent fs-200 uppercase">Est. travel time</h3>
-            <p className="fs-500 ff-serif uppercase">{destination.travel}</p>
+            <p className="ff-serif uppercase">{destination.travel}</p>
           </div>
         </div>
       </article>
