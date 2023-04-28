@@ -3,59 +3,63 @@ import DESTINATIONS from "../mocks/destinations.json";
 
 // TODO color html tags
 
+interface Destination {
+  name: string;
+  images: {
+    png: string;
+    webp: string;
+  };
+  description: string;
+  distance: string;
+  travel: string;
+  id: string;
+}
+
 const Destinations = (): JSX.Element => {
-  const [destination, setDestination] = useState(DESTINATIONS[0]);
-  console.log(destination);
+  const [destination, setDestination] = useState<Destination>(DESTINATIONS[0]);
+  const destinationChangeHandler = (id: string) => {
+    const currentDestination = DESTINATIONS.find(
+      (dest) => dest.id === id
+    ) as Destination;
+    setDestination(currentDestination);
+  };
+  const renderButtons = () => {
+    return DESTINATIONS.map((dest) => {
+      return (
+        <button
+          aria-selected={dest.id === destination.id}
+          className="uppercase ff-sans-cond text-accent bg-dark letter-spacing-2"
+          key={dest.id}
+          onClick={() => destinationChangeHandler(dest.id)}
+        >
+          {dest.name}
+        </button>
+      );
+    });
+  };
   return (
     <main id="main" className="grid-container grid-container--destination">
       <h1 className="numbered-title">
         <span aria-hidden="true">01</span> Pick your destination
       </h1>
-      <img src="../destination/image-moon.png" alt="the moon" />
+      <img
+        src={destination.images.png}
+        alt={`the ${destination.name} planet`}
+      />
       <div className="tab-list underline-indicators flex">
-        <button
-          aria-selected="true"
-          className="uppercase ff-sans-cond text-accent bg-dark letter-spacing-2"
-        >
-          Moon
-        </button>
-        <button
-          aria-selected="false"
-          className="uppercase ff-sans-cond text-accent bg-dark letter-spacing-2"
-        >
-          Mars
-        </button>
-        <button
-          aria-selected="false"
-          className="uppercase ff-sans-cond text-accent bg-dark letter-spacing-2"
-        >
-          Europa
-        </button>
-        <button
-          aria-selected="false"
-          className="uppercase ff-sans-cond text-accent bg-dark letter-spacing-2"
-        >
-          Titan
-        </button>
+        {renderButtons()}
       </div>
       <article className="destination-info">
-        <h2 className="fs-800 uppercase ff-serif">Moon</h2>
-
-        <p>
-          See our planet as you’ve never seen it before. A perfect relaxing trip
-          away to help regain perspective and come back refreshed. While you’re
-          there, take in some history by visiting the Luna 2 and Apollo 11
-          landing sites.
-        </p>
-
+        <h2 className="fs-800 uppercase ff-serif">{destination.name}</h2>
+        <p>{destination.description}</p>
         <div className="destination-meta flex">
           <div>
             <h3 className="text-accent fs-200 uppercase">Avg. distance</h3>
-            <p className="fs-500 ff-serif uppercase">384,400 km</p>
+            <p className="fs-500 ff-serif uppercase">{destination.distance}</p>
           </div>
           <div>
             <h3 className="text-accent fs-200 uppercase">Est. travel time</h3>
-            <p className="fs-500 ff-serif uppercase">3 days</p>
+            <p className="fs-500 ff-serif uppercase">{destination.travel}</p>
           </div>
         </div>
       </article>
