@@ -1,3 +1,5 @@
+import { Link } from "react-router-dom";
+
 const Home = (): JSX.Element => {
   return (
     <main id="main" className="grid-container grid-container--home">
@@ -15,12 +17,12 @@ const Home = (): JSX.Element => {
       </div>
 
       <div>
-        <a
-          href="#"
+        <Link
+          to=".."
           className="large-button uppercase ff-serif text-dark bg-white"
         >
           Explore
-        </a>
+        </Link>
       </div>
     </main>
   );
