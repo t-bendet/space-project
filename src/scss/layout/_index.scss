@@ -27,10 +27,9 @@
 }
 
 .grid-container {
-  * {
+  p:not([class]) {
     max-width: 50ch;
   }
-
   display: grid;
   text-align: center;
   place-items: center;
@@ -38,19 +37,11 @@
   padding-bottom: 4rem;
   @include mq(large) {
     text-align: left;
+    column-gap: var(--container-gap, 2rem);
     grid-template-columns: minmax(1rem, 1fr) repeat(2, minmax(0, 30rem)) minmax(
         1rem,
         1fr
       );
-    column-gap: var(--container-gap, 2rem);
-    & > *:first-child {
-      grid-column: 2;
-    }
-    & > *:last-child {
-      grid-column: 3;
-      // TODO add this
-      // justify-self: end;
-    }
   }
 }
 

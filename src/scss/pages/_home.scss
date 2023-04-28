@@ -14,4 +14,12 @@
 .grid-container--home {
   padding-bottom: max(6rem, 20vh);
   align-items: end;
+  @include mq(large) {
+    & > *:first-child {
+      grid-column: 2;
+    }
+    & > *:last-child {
+      grid-column: 3;
+    }
+  }
 }

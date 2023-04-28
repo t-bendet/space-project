@@ -24,13 +24,30 @@
   }
   & > img {
     grid-area: image;
-    max-width: 60%;
+    max-width: 50%;
   }
   & > .tab-list {
     grid-area: tabs;
   }
   & > .destination-info {
     grid-area: content;
+  }
+  @include mq(medium) {
+    & > .numbered-title {
+      justify-self: start;
+      margin-top: 2rem;
+    }
+  }
+  @include mq(large) {
+    justify-items: start;
+    align-content: start;
+    grid-template-areas:
+      ". title title ."
+      ". image tabs ."
+      ". image content .";
+    & > img {
+      max-width: 90%;
+    }
   }
 }
 
@@ -39,4 +56,15 @@
   border-top: 1px solid color.adjust($clr-white, $alpha: -0.8);
   padding-top: 2.5rem;
   margin-top: 2.5rem;
+  p {
+    font-size: 1.75rem;
+  }
+  @include mq(medium) {
+    flex-direction: row;
+    justify-content: space-evenly;
+  }
+  @include mq(large) {
+    --gap: min(6vw, 6rem);
+    justify-content: start;
+  }
 }
