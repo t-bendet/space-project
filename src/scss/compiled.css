@@ -228,14 +228,14 @@ select {
   gap: var(--gap, 1rem);
 }
 
-.d-block {
-  display: block;
-}
-
 .container {
   padding-inline: 2em;
   margin-inline: auto;
   max-width: 80rem;
+}
+
+.d-block {
+  display: block;
 }
 
 .grid-container {
