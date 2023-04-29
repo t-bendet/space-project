@@ -1,6 +1,7 @@
 [
   {
     "name": "Launch vehicle",
+    "id": "launchVehicle",
     "images": {
       "portrait": "./technology/image-launch-vehicle-portrait.jpg",
       "landscape": "./technology/image-launch-vehicle-landscape.jpg"
@@ -9,6 +10,7 @@
   },
   {
     "name": "Spaceport",
+    "id": "spaceport",
     "images": {
       "portrait": "./technology/image-spaceport-portrait.jpg",
       "landscape": "./technology/image-spaceport-landscape.jpg"
@@ -17,6 +19,7 @@
   },
   {
     "name": "Space capsule",
+    "id": "spaceCapsule",
     "images": {
       "portrait": "./technology/image-space-capsule-portrait.jpg",
       "landscape": "./technology/image-space-capsule-landscape.jpg"

@@ -12,4 +12,37 @@
 }
 
 .grid-container--technology {
+  padding-inline: 0;
+  @include flow(2rem);
+  grid-template-areas:
+    "title"
+    "image"
+    "tabs"
+    "content";
+  & > .numbered-title {
+    grid-area: title;
+  }
+  & > image {
+    grid-area: image;
+    max-width: 60%;
+  }
+  & > .dot-indicators {
+    grid-area: tabs;
+  }
+  & > .crew-details {
+    grid-area: content;
+  }
+
+  // grid-template-areas:
+  // ". title title ."
+  // ". tabs content image image"
+  // ". tabs content image image";
+}
+
+.tech-details {
+  @include flow(1rem);
+  padding-inline: 1rem;
+  header {
+    @include flow(0.5rem);
+  }
 }
