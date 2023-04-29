@@ -31,7 +31,7 @@
   & > .numbered-title {
     grid-area: title;
   }
-  & > img {
+  & > picture {
     grid-area: image;
     max-width: 60%;
     border-bottom: 1px solid color.adjust($clr-white, $alpha: -0.8);
@@ -55,7 +55,7 @@
     &.grid-container {
       padding-bottom: 0;
     }
-    & > img {
+    & > picture {
       align-self: end;
     }
   }
@@ -64,7 +64,7 @@
       ". title title ."
       ". content image ."
       ". tabs image .";
-    & > img {
+    & > picture {
       max-width: 90%;
     }
     & > .dot-indicators {
