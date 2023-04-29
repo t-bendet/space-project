@@ -1,5 +1,5 @@
 import { useState } from "react";
-import { NavLink } from "react-router-dom";
+import { NavLink, Link } from "react-router-dom";
 
 const NavBar = (): JSX.Element => {
   const [isNavOpen, setIsNavOpen] = useState<boolean>(false);
@@ -13,9 +13,9 @@ const NavBar = (): JSX.Element => {
   };
   return (
     <header className="primary-header flex">
-      <div>
+      <Link to="..">
         <img src="../logo.svg" alt="space tourism logo" className="logo" />
-      </div>
+      </Link>
       <button
         onClick={navToggleHandler}
         className="mobile-nav-toggle"
