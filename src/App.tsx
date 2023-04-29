@@ -6,7 +6,7 @@ import Destinations from "./pages/Destinations";
 import Crew from "./pages/Crew";
 import Technology from "./pages/Technology";
 
-// TODO where to pu images?
+// TODO remove design page,route and scss
 
 const router = createBrowserRouter([
   {

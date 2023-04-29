@@ -2,6 +2,7 @@
 @use "../abstracts/" as *;
 @use "sass:map";
 
+// TODO  modify
 .flex {
   display: flex;
   gap: var(--gap, 1rem);
@@ -11,19 +12,19 @@
   }
 }
 
+// TODO remove unused classes
 .grid {
   display: grid;
   gap: var(--gap, 1rem);
 }
-
-.d-block {
-  display: block;
-}
-
 .container {
   padding-inline: 2em;
   margin-inline: auto;
   max-width: 80rem;
+}
+
+.d-block {
+  display: block;
 }
 
 .grid-container {
