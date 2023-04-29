@@ -1,4 +1,5 @@
 @use "../abstracts/" as *;
+@use "sass:color";
 
 .crew {
   background-image: url("./crew/background-crew-mobile.jpg");
@@ -10,6 +11,64 @@
     background-image: url("./crew/background-crew-desktop.jpg");
   }
 }
+.crew-details {
+  @include flow();
+  h2 {
+    color: color.adjust($clr-white, $alpha: -0.5);
+  }
+  header {
+    @include flow(0.5rem);
+  }
+}
 
 .grid-container--crew {
+  @include flow(2rem);
+  grid-template-areas:
+    "title"
+    "image"
+    "tabs"
+    "content";
+  & > .numbered-title {
+    grid-area: title;
+  }
+  & > img {
+    grid-area: image;
+    max-width: 60%;
+    border-bottom: 1px solid color.adjust($clr-white, $alpha: -0.8);
+  }
+  & > .dot-indicators {
+    grid-area: tabs;
+  }
+  & > .crew-details {
+    grid-area: content;
+  }
+  @include mq(medium) {
+    grid-template-areas:
+      "title"
+      "content"
+      "tabs"
+      "image";
+    & > .numbered-title {
+      justify-self: start;
+      margin-top: 2rem;
+    }
+    &.grid-container {
+      padding-bottom: 0;
+    }
+    & > img {
+      align-self: end;
+    }
+  }
+  @include mq(large) {
+    grid-template-areas:
+      ". title title ."
+      ". content image ."
+      ". tabs image .";
+    & > img {
+      max-width: 90%;
+    }
+    & > .dot-indicators {
+      justify-self: start;
+    }
+  }
 }

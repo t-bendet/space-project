@@ -1,6 +1,9 @@
 @use "breakpoints" as *;
 @use "sass:map";
 
+// TODO add options for mq
+// TODO use new width >< operator width >= 600px
+
 @mixin mq($key) {
   $size: map.get($breakpoints, $key);
   @media (min-width: $size) {

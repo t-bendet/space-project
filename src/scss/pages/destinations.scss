@@ -30,6 +30,7 @@
     grid-area: tabs;
   }
   & > .destination-info {
+    @include flow();
     grid-area: content;
   }
   @include mq(medium) {
