@@ -18,7 +18,7 @@ const Home = (): JSX.Element => {
 
       <div>
         <Link
-          to=".."
+          to="destinations"
           className="large-button uppercase ff-serif text-dark bg-white"
         >
           Explore

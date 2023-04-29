@@ -60,15 +60,18 @@
     }
   }
   @include mq(large) {
+    justify-items: start;
+    grid-template-columns: minmax(1rem, 1fr) minmax(0, 37rem) minmax(0, 23rem) minmax(
+        1rem,
+        1fr
+      );
     grid-template-areas:
       ". title title ."
-      ". content image ."
-      ". tabs image .";
+      ". content image image"
+      ". tabs image image";
     & > picture {
       max-width: 90%;
-    }
-    & > .dot-indicators {
-      justify-self: start;
+      align-self: end;
     }
   }
 }
