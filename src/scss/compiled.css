@@ -311,7 +311,7 @@ select {
   cursor: pointer;
   border: 0;
   border-radius: 50%;
-  padding: 0 1.75rem;
+  padding: 0 1rem;
   aspect-ratio: 1;
   outline: 1px solid rgba(255, 255, 255, 0.25);
   background-color: transparent;
@@ -702,6 +702,37 @@ select {
   .technology {
     background-image: url("./technology/background-technology-desktop.jpg");
   }
+}
+
+.grid-container--technology {
+  padding-inline: 0;
+  grid-template-areas: "title" "image" "tabs" "content";
+}
+.grid-container--technology > *:where(:not(:first-child)) {
+  margin-top: 2rem;
+}
+.grid-container--technology > .numbered-title {
+  grid-area: title;
+}
+.grid-container--technology > image {
+  grid-area: image;
+  max-width: 60%;
+}
+.grid-container--technology > .dot-indicators {
+  grid-area: tabs;
+}
+.grid-container--technology > .crew-details {
+  grid-area: content;
+}
+
+.tech-details {
+  padding-inline: 1rem;
+}
+.tech-details > *:where(:not(:first-child)) {
+  margin-top: 1rem;
+}
+.tech-details header > *:where(:not(:first-child)) {
+  margin-top: 0.5rem;
 }
 
 /*# sourceMappingURL=compiled.css.map */
