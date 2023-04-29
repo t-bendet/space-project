@@ -7,6 +7,7 @@ import Crew from "./pages/Crew";
 import Technology from "./pages/Technology";
 
 // TODO remove design page,route and scss
+// TODO add keyboard nav
 
 const router = createBrowserRouter([
   {

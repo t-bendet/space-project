@@ -31,7 +31,7 @@
   & > .numbered-title {
     grid-area: title;
   }
-  & > img {
+  & > picture {
     grid-area: image;
     max-width: 60%;
     border-bottom: 1px solid color.adjust($clr-white, $alpha: -0.8);
@@ -55,20 +55,23 @@
     &.grid-container {
       padding-bottom: 0;
     }
-    & > img {
+    & > picture {
       align-self: end;
     }
   }
   @include mq(large) {
+    justify-items: start;
+    grid-template-columns: minmax(1rem, 1fr) minmax(0, 37rem) minmax(0, 23rem) minmax(
+        1rem,
+        1fr
+      );
     grid-template-areas:
       ". title title ."
-      ". content image ."
-      ". tabs image .";
-    & > img {
+      ". content image image"
+      ". tabs image image";
+    & > picture {
       max-width: 90%;
-    }
-    & > .dot-indicators {
-      justify-self: start;
+      align-self: end;
     }
   }
 }

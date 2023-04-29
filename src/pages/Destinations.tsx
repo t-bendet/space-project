@@ -41,10 +41,13 @@ const Destinations = (): JSX.Element => {
       <h1 className="numbered-title">
         <span aria-hidden="true">01</span> Pick your destination
       </h1>
-      <img
-        src={destination.images.png}
-        alt={`the ${destination.name} planet`}
-      />
+      <picture>
+        <source srcSet={destination.images.webp} type="image/webp" />
+        <img
+          src={destination.images.png}
+          alt={`the ${destination.name} planet`}
+        />
+      </picture>
       <div className="tab-list underline-indicators flex">
         {renderButtons()}
       </div>

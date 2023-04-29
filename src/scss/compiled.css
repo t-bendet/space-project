@@ -564,9 +564,10 @@ select {
 .grid-container--destination > .numbered-title {
   grid-area: title;
 }
-.grid-container--destination > img {
+.grid-container--destination > picture {
   grid-area: image;
-  max-width: 50%;
+  max-width: 60%;
+  align-self: start;
 }
 .grid-container--destination > .tab-list {
   grid-area: tabs;
@@ -589,7 +590,7 @@ select {
     align-content: start;
     grid-template-areas: ". title title ." ". image tabs ." ". image content .";
   }
-  .grid-container--destination > img {
+  .grid-container--destination > picture {
     max-width: 90%;
   }
 }
@@ -650,7 +651,7 @@ select {
 .grid-container--crew > .numbered-title {
   grid-area: title;
 }
-.grid-container--crew > img {
+.grid-container--crew > picture {
   grid-area: image;
   max-width: 60%;
   border-bottom: 1px solid rgba(255, 255, 255, 0.2);
@@ -672,19 +673,19 @@ select {
   .grid-container--crew.grid-container {
     padding-bottom: 0;
   }
-  .grid-container--crew > img {
+  .grid-container--crew > picture {
     align-self: end;
   }
 }
 @media (min-width: 45rem) {
   .grid-container--crew {
-    grid-template-areas: ". title title ." ". content image ." ". tabs image .";
+    justify-items: start;
+    grid-template-columns: minmax(1rem, 1fr) minmax(0, 37rem) minmax(0, 23rem) minmax(1rem, 1fr);
+    grid-template-areas: ". title title ." ". content image image" ". tabs image image";
   }
-  .grid-container--crew > img {
+  .grid-container--crew > picture {
     max-width: 90%;
-  }
-  .grid-container--crew > .dot-indicators {
-    justify-self: start;
+    align-self: end;
   }
 }
 
