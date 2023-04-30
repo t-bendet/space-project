@@ -55,8 +55,7 @@
     aspect-ratio: 1;
     outline: 1px solid color.adjust($clr-white, $alpha: -0.75);
     background-color: transparent;
-    color: color.adjust($clr-white, $alpha: -0.75);
-
+    color: $clr-white;
     &:hover,
     &:focus {
       outline: 1px solid color.adjust($clr-white, $alpha: -0.5);
@@ -66,5 +65,15 @@
   [aria-selected="true"] {
     background-color: color.adjust($clr-white, $alpha: 1);
     color: $clr-dark;
+  }
+  @include mq(medium) {
+    & > * {
+      padding: 0 1.65rem;
+    }
+  }
+  @include mq(large) {
+    & > * {
+      padding: 0 2.25rem;
+    }
   }
 }

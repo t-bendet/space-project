@@ -315,7 +315,7 @@ select {
   aspect-ratio: 1;
   outline: 1px solid rgba(255, 255, 255, 0.25);
   background-color: transparent;
-  color: rgba(255, 255, 255, 0.25);
+  color: hsl(0, 0%, 100%);
 }
 .numbered-indicators > *:hover, .numbered-indicators > *:focus {
   outline: 1px solid rgba(255, 255, 255, 0.5);
@@ -324,6 +324,16 @@ select {
 .numbered-indicators [aria-selected=true] {
   background-color: white;
   color: hsl(230, 35%, 7%);
+}
+@media (min-width: 35rem) {
+  .numbered-indicators > * {
+    padding: 0 1.65rem;
+  }
+}
+@media (min-width: 45rem) {
+  .numbered-indicators > * {
+    padding: 0 2.25rem;
+  }
 }
 
 .large-button {
@@ -714,15 +724,34 @@ select {
 .grid-container--technology > .numbered-title {
   grid-area: title;
 }
-.grid-container--technology > image {
+.grid-container--technology > img {
   grid-area: image;
-  max-width: 60%;
 }
-.grid-container--technology > .dot-indicators {
+.grid-container--technology > .numbered-indicators {
   grid-area: tabs;
 }
-.grid-container--technology > .crew-details {
+.grid-container--technology > .tech-details {
   grid-area: content;
+}
+@media (min-width: 35rem) {
+  .grid-container--technology > .numbered-title {
+    justify-self: start;
+    margin-top: 2rem;
+    margin-left: 2rem;
+  }
+}
+@media (min-width: 45rem) {
+  .grid-container--technology {
+    grid-template-columns: minmax(1rem, 5rem) 8rem minmax(0, 37rem) minmax(23rem, 1fr);
+    grid-template-areas: ". title title . " ". tabs content image" ". tabs content image";
+  }
+  .grid-container--technology .numbered-indicators {
+    flex-direction: column;
+  }
+  .grid-container--technology > img {
+    align-self: end;
+    justify-self: end;
+  }
 }
 
 .tech-details {
