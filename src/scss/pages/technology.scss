@@ -11,6 +11,8 @@
   }
 }
 
+// TODO large screen layout ,image abd all
+
 .grid-container--technology {
   padding-inline: 0;
   @include flow(2rem);
@@ -22,21 +24,41 @@
   & > .numbered-title {
     grid-area: title;
   }
-  & > image {
+  & > img {
     grid-area: image;
-    max-width: 60%;
   }
-  & > .dot-indicators {
+  & > .numbered-indicators {
     grid-area: tabs;
   }
-  & > .crew-details {
+  & > .tech-details {
     grid-area: content;
   }
+  @include mq(medium) {
+    & > .numbered-title {
+      justify-self: start;
+      margin-top: 2rem;
+      margin-left: 2rem;
+    }
+  }
+  @include mq(large) {
+    // justify-items: start;
+    .numbered-indicators {
+      flex-direction: column;
+    }
+    & > img {
+      align-self: end;
+      justify-self: end;
+    }
 
-  // grid-template-areas:
-  // ". title title ."
-  // ". tabs content image image"
-  // ". tabs content image image";
+    grid-template-columns: minmax(1rem, 5rem) 8rem minmax(0, 37rem) minmax(
+        23rem,
+        1fr
+      );
+    grid-template-areas:
+      ". title title . "
+      ". tabs content image"
+      ". tabs content image";
+  }
 }
 
 .tech-details {
