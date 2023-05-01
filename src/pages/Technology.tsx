@@ -37,8 +37,14 @@ const Technology = (): JSX.Element => {
       <h1 className="numbered-title">
         <span aria-hidden="true">03</span> space launch 101
       </h1>
-      {/* TODO images type change on large screen */}
-      <img src={technology.images.portrait} alt={technology.name} />
+      <picture>
+        <source
+          media="(max-width: 45rem)"
+          srcSet={`${technology.images.landscape}`}
+        />
+        <source srcSet={`${technology.images.portrait}`} />
+        <img src={technology.images.landscape} alt={technology.name} />
+      </picture>
       <div className="numbered-indicators flex">{renderButtons()}</div>
       <article className="tech-details">
         <header>

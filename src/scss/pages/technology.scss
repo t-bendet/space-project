@@ -11,7 +11,7 @@
   }
 }
 
-// TODO large screen layout ,image abd all
+// TODO font sizes
 
 .grid-container--technology {
   padding-inline: 0;
@@ -21,10 +21,13 @@
     "image"
     "tabs"
     "content";
+  p {
+    max-width: 43ch;
+  }
   & > .numbered-title {
     grid-area: title;
   }
-  & > img {
+  & > picture {
     grid-area: image;
   }
   & > .numbered-indicators {
@@ -36,26 +39,30 @@
   @include mq(medium) {
     & > .numbered-title {
       justify-self: start;
-      margin-top: 2rem;
-      margin-left: 2rem;
+      align-self: start;
+      margin-left: 1rem;
     }
   }
   @include mq(large) {
     // justify-items: start;
     .numbered-indicators {
       flex-direction: column;
+      justify-self: start;
+      align-self: start;
     }
-    & > img {
+    & > picture {
       align-self: end;
       justify-self: end;
+      width: 100%;
     }
-
-    grid-template-columns: minmax(1rem, 5rem) 8rem minmax(0, 37rem) minmax(
-        23rem,
-        1fr
-      );
+    & > .tech-details {
+      align-self: start;
+    }
+    grid-template-columns:
+      minmax(1rem, 5rem) minmax(3rem, 8rem) minmax(min-content, 1fr)
+      minmax(22rem, 32rem);
     grid-template-areas:
-      ". title title . "
+      ". title title image "
       ". tabs content image"
       ". tabs content image";
   }

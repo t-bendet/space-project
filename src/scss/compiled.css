@@ -482,46 +482,6 @@ select {
   }
 }
 
-#colors > *:where(:not(:first-child)) {
-  margin-top: 1rem;
-}
-
-#typography > *:where(:not(:first-child)) {
-  margin-top: 1rem;
-}
-#typography .typography__first > *:where(:not(:first-child)) {
-  margin-top: 1rem;
-}
-#typography .typography__second > *:where(:not(:first-child)) {
-  margin-top: 4rem;
-}
-
-#interactive-elements > *:where(:not(:first-child)) {
-  margin-top: 1rem;
-}
-
-.test {
-  background: purple;
-  width: 100px;
-  height: 100px;
-  background-color: black;
-}
-@media (min-width: 20rem) {
-  .test {
-    background-color: red;
-  }
-}
-@media (min-width: 35rem) {
-  .test {
-    background-color: green;
-  }
-}
-@media (min-width: 45rem) {
-  .test {
-    background-color: blue;
-  }
-}
-
 .home {
   background-image: url("./home/background-home-mobile.jpg");
 }
@@ -721,10 +681,13 @@ select {
 .grid-container--technology > *:where(:not(:first-child)) {
   margin-top: 2rem;
 }
+.grid-container--technology p {
+  max-width: 43ch;
+}
 .grid-container--technology > .numbered-title {
   grid-area: title;
 }
-.grid-container--technology > img {
+.grid-container--technology > picture {
   grid-area: image;
 }
 .grid-container--technology > .numbered-indicators {
@@ -736,21 +699,27 @@ select {
 @media (min-width: 35rem) {
   .grid-container--technology > .numbered-title {
     justify-self: start;
-    margin-top: 2rem;
-    margin-left: 2rem;
+    align-self: start;
+    margin-left: 1rem;
   }
 }
 @media (min-width: 45rem) {
   .grid-container--technology {
-    grid-template-columns: minmax(1rem, 5rem) 8rem minmax(0, 37rem) minmax(23rem, 1fr);
-    grid-template-areas: ". title title . " ". tabs content image" ". tabs content image";
+    grid-template-columns: minmax(1rem, 5rem) minmax(3rem, 8rem) minmax(min-content, 1fr) minmax(22rem, 32rem);
+    grid-template-areas: ". title title image " ". tabs content image" ". tabs content image";
   }
   .grid-container--technology .numbered-indicators {
     flex-direction: column;
+    justify-self: start;
+    align-self: start;
   }
-  .grid-container--technology > img {
+  .grid-container--technology > picture {
     align-self: end;
     justify-self: end;
+    width: 100%;
+  }
+  .grid-container--technology > .tech-details {
+    align-self: start;
   }
 }
 
