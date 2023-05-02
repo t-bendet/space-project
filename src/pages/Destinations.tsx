@@ -1,7 +1,6 @@
 import { useState } from "react";
 import DESTINATIONS from "../mocks/destinations.json";
 
-// TODO color html tags
 interface Destination {
   name: string;
   images: {
