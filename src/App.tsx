@@ -5,7 +5,7 @@ import Destinations from "./pages/Destinations";
 import Crew from "./pages/Crew";
 import Technology from "./pages/Technology";
 
-// TODO add keyboard nav
+// TODO add keyboard navigation
 // TODO go over each page and adjust fonts sizes ,gaps and sizes
 
 const router = createBrowserRouter([
